@@ -1,0 +1,12 @@
+sqlmodel>=0.0.16
+sqlalchemy>=2.0.0
+tavily-python>=0.3.3
+openai>=1.40.0
+python-dotenv>=1.0.1
+httpx>=0.26.0
+pymupdf>=1.24.0
+pdfplumber>=0.11.0
+python-docx>=1.1.0
+beautifulsoup4>=4.12.0
+html2text>=2024.2.26
+openpyxl>=3.1.0
