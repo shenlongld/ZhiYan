@@ -1,0 +1,138 @@
+{
+  "description": "院校样本分布（用于校验）",
+  "schools": [
+    {
+      "school": "厦门大学",
+      "total": 3,
+      "admit": 0,
+      "reject": 3,
+      "difficulty": 1.0
+    },
+    {
+      "school": "西湖大学",
+      "total": 2,
+      "admit": 0,
+      "reject": 2,
+      "difficulty": 1.0
+    },
+    {
+      "school": "长春工业大学",
+      "total": 1,
+      "admit": 0,
+      "reject": 1,
+      "difficulty": 1.0
+    },
+    {
+      "school": "中山大学",
+      "total": 1,
+      "admit": 0,
+      "reject": 1,
+      "difficulty": 1.0
+    },
+    {
+      "school": "如何看待中国海洋大学",
+      "total": 1,
+      "admit": 0,
+      "reject": 1,
+      "difficulty": 1.0
+    },
+    {
+      "school": "哈尔滨工业大学",
+      "total": 1,
+      "admit": 0,
+      "reject": 1,
+      "difficulty": 1.0
+    },
+    {
+      "school": "真的建议大学",
+      "total": 1,
+      "admit": 0,
+      "reject": 1,
+      "difficulty": 1.0
+    },
+    {
+      "school": "武汉大学",
+      "total": 3,
+      "admit": 1,
+      "reject": 2,
+      "difficulty": 0.666667
+    },
+    {
+      "school": "中国科学技术大学",
+      "total": 5,
+      "admit": 2,
+      "reject": 3,
+      "difficulty": 0.6
+    },
+    {
+      "school": "上海交通大学",
+      "total": 5,
+      "admit": 2,
+      "reject": 3,
+      "difficulty": 0.6
+    },
+    {
+      "school": "浙江大学",
+      "total": 7,
+      "admit": 3,
+      "reject": 4,
+      "difficulty": 0.571429
+    },
+    {
+      "school": "北京大学",
+      "total": 7,
+      "admit": 3,
+      "reject": 4,
+      "difficulty": 0.571429
+    },
+    {
+      "school": "东南大学",
+      "total": 4,
+      "admit": 2,
+      "reject": 2,
+      "difficulty": 0.5
+    },
+    {
+      "school": "南京大学",
+      "total": 5,
+      "admit": 3,
+      "reject": 2,
+      "difficulty": 0.4
+    },
+    {
+      "school": "复旦大学",
+      "total": 5,
+      "admit": 3,
+      "reject": 2,
+      "difficulty": 0.4
+    },
+    {
+      "school": "西安交通大学",
+      "total": 3,
+      "admit": 2,
+      "reject": 1,
+      "difficulty": 0.333333
+    },
+    {
+      "school": "清华大学",
+      "total": 5,
+      "admit": 4,
+      "reject": 1,
+      "difficulty": 0.2
+    },
+    {
+      "school": "北京航空航天大学",
+      "total": 2,
+      "admit": 2,
+      "reject": 0,
+      "difficulty": 0.0
+    },
+    {
+      "school": "中国人民大学",
+      "total": 1,
+      "admit": 1,
+      "reject": 0,
+      "difficulty": 0.0
+    }
+  ]
+}

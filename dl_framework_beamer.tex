@@ -1,0 +1,379 @@
+\documentclass[10pt, aspectratio=169]{beamer}
+
+% --- 基础宏包 ---
+\usepackage{ctex} % 中文支持
+\usepackage{xeCJK}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{booktabs} % 表格美化
+\usepackage{graphicx}
+\usepackage{listings} % 代码展示
+\usepackage{xcolor}
+
+% --- 代码样式设置 ---
+\lstset{
+    basicstyle=\ttfamily\scriptsize,
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    stringstyle=\color{orange},
+    breaklines=true,
+    frame=single,
+    backgroundcolor=\color{gray!5}
+}
+
+% --- 主题设置 ---
+\usetheme{Madrid}
+\usecolortheme{whale}
+% --- 首页信息 ---
+\title{保研推荐系统：夏令营推荐模块}
+\author{第四小组演示汇报}
+\date{\today}
+
+\begin{document}
+
+% 生成封面
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}{目标}
+    \begin{block}{}
+        推荐用户选择恰当的夏令营进行准备：结合过往经验贴中的入营与背景信息，为每位用户匹配更合适的目标学院夏令营，评估各夏令营入营的门槛与侧重点，助力保研申请决策。
+    \end{block}
+\end{frame}
+
+% 生成目录
+\begin{frame}{目录}
+    \tableofcontents
+\end{frame}
+
+% --- 模块占位符（后续将在此填充） ---
+% --- 第一部分：数据预处理 ---
+\section{数据预处理}
+
+\begin{frame}{数据标准化与向量化}
+    \begin{itemize}
+        \item 校名/院系对齐：用正则 + 别名表（如「浙大」$\rightarrow$「浙江大学」），从标题、备注、夏令营详情里抓取「目标学院」；同时保留采集字段里的本科层次（末九、华五等），供后面权重表使用。
+        \item 成绩文本：从 \texttt{rank\_text}、百分比、名次/总人数等解析成 $0$--$100$ 的成绩特征（越高表示相对越好）。
+        \item 多热向量：[竞赛获奖、论文发表]各建一张词表；每条帖子在这些表上各出现过的条目置 $1$，其余为 $0$。
+        \item 入营标签：结合结构化字段 \texttt{camp\_admitted} 与「上岸、offer、优营」、「未入营、被拒」等关键词做入营判定。
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile,allowframebreaks]{向量化}
+    \begin{lstlisting}[language=Python, caption=特征提取与向量化]
+def multi_hot(vocab_index: Dict[str, int], values: List[str]) -> List[int]:
+    vec = [0] * len(vocab_index)
+    for v in values:
+        if v in vocab_index:
+            vec[vocab_index[v]] = 1
+    return vec
+
+for rec in rows:
+    comp_display, comp_tags = extract_competitions(rec)
+    school_depts = extract_school_departments(rec)
+    school_tier_str = rec.get("school_tier") or "未知"
+    compact_rows.append({
+        "id": rid, "成绩": score_text,
+        "本科层次": school_tier_str,
+        "入营情况": admission_map
+    })
+    # 生成特征向量
+    vector_rows.append({
+        "id": rid,
+        "competition_vector": multi_hot(comp_index, comp_tags),
+        "school_dept_vector": multi_hot(sd_index, school_depts) })
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}{处理前后对比}
+    \begin{columns}
+        \begin{column}{0.48\textwidth}
+            处理前 (原始采集数据)
+            \begin{block}{Raw JSON}
+                {\tiny
+                \begin{itemize}
+                    \item "source\_title": "三本跨保清华..."
+                    \item "rank\_text": "前1\%"
+                    \item "competition\_achievements": [\{"name": "蓝桥杯", "level": "省一"\}]
+                    \item "notes": "最终拿到了清华贵系offer"
+                \end{itemize}
+                }
+            \end{block}
+        \end{column}
+        
+        \begin{column}{0.48\textwidth}
+            处理后
+            \begin{block}{Compact \& Vector}
+                {\tiny
+                \begin{itemize}
+                    \item Compact: \texttt{id}、\texttt{成绩}、\texttt{本科层次}、\texttt{学校院系}、\texttt{入营情况:\{ "浙江大学-计算机": true, ...\}}
+                    \item Vocab 规模（示例跑批）: 竞赛维 50、论文维 60、目标院系 43
+                    \item Vector: 三条多热向量，与词表对齐
+                \end{itemize}
+                }
+            \end{block}
+        \end{column}
+    \end{columns}
+    \vspace{0.5cm}
+    \centering
+    输出文件： \texttt{compact.jsonl}, \texttt{vocab.json}, \texttt{vectors.jsonl}
+\end{frame}
+
+
+% --- 第二部分：权重计算与价值评估 ---
+\section{申请者的竞赛/论文/本科层次价值评估}
+
+\begin{frame}{评估方式}
+    \begin{itemize}
+        \item 先按夏令营高校（帖子里出现的学校）分组。对该组记：$\mathrm{pos}$ $=$ 入营人数，$\mathrm{neg}$ $=$ 未入营人数，总人数 $\mathrm{pos}+\mathrm{neg}$。\\
+        难度 $D=\dfrac{\mathrm{neg}}{\mathrm{pos}+\mathrm{neg}}\in[0,1]$：没进营的人越多（$\mathrm{neg}$ 越大），$D$ 越大。
+        \item 对组内每条帖子，将其身上的竞赛标签、论文标签在全局上累加：\\
+        进营（正向）：各标签 $+\dfrac{\mathrm{neg}}{\mathrm{pos}+\mathrm{neg}}$；\quad
+        未进营（逆向）：各标签 $-\dfrac{\mathrm{pos}}{\mathrm{pos}+\mathrm{neg}}$。\\
+        \item 所有标签的原始分累加后，在全局做一次归一化$0$--$100$，得到 \texttt{comp\_value.json}、\texttt{paper\_value.json}、\texttt{tier\_value.json}。
+        \item 缺陷：某些高含金量的条目可能因全局累加的方式被低估。
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{权重计算代码}
+    \begin{lstlisting}[language=Python, caption= pos/neg 组内增量]
+# 按目标高校分组后：pos=入营人数, neg=未入营人数
+for school, occs in school_occ.items():
+    pos = sum(1 for x in occs if x["admitted"])
+    neg = len(occs) - pos
+    total = pos + neg
+    if total <= 0:
+        continue
+    step_pos = neg / total   # 进营：+ neg/(pos+neg)
+    step_neg = pos / total   # 未进营：- pos/(pos+neg)
+
+    for occ in occs:
+        step = step_pos if occ["admitted"] else -step_neg
+        for item in set(occ["comp_items"]):
+            comp[item] += step
+        for item in set(occ["paper_items"]):
+            paper[item] += step
+        tier[occ["tier_item"]] += step  # 本科层次，同增量
+
+# 全局 raw 再 normalize_to_100 -> comp_map, paper_map, tier_map
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}{价值评估结果示例}
+    \begin{table}[]
+        \centering
+        \caption{竞赛 / 论文 / 本科层次（归一化到 $0$--$100$，节选）}
+        \scriptsize
+        \begin{tabular}{l|r|l|r}
+        \toprule
+        类型 & 价值 & 条目 & 价值 \\ \midrule
+        竞赛 & 100.0 & 世界超算大赛 & 99.28 \\
+        竞赛 & 57.19 & 数学建模 & 57.19 \\
+        竞赛 & 53.24 & ACM & 53.24 \\
+        竞赛 & 0.0 & 蓝桥杯 & 0.0 \\
+        \midrule
+        论文 & 100.0 & NeurIPS / CVPR & 100.0 \\
+        论文 & 94.04 & CCF-B / SCI二区 & 94.04 \\
+        论文 & 12.77 & WWW & 12.77 \\
+        论文 & 0.0 & EI & 0.0 \\
+        \midrule
+        本科层 & 100.0 & 末九 & 100.0 \\
+        本科层 & 68.63 & 华五 & 68.63 \\
+        本科层 & 0.0 & 其他 & 0.0 \\
+        \bottomrule
+        \end{tabular}
+    \end{table}
+    \begin{block}{说明}
+        此表为本批 114 条帖子在该规则下的统计结果示例，不代表真正价值。产物：\texttt{comp\_value.json}、\texttt{paper\_value.json}、\texttt{tier\_value.json}。
+    \end{block}
+\end{frame}
+
+% --- 第三部分：模型训练与门槛预测 ---
+\section{院校夏令营画像}
+
+\begin{frame}{按校建模：监督学习（二分类）}
+    \small
+    \begin{itemize}\setlength{\itemsep}{0.25em}
+        \item 问题类型：每个「学院」对应一个独立的二分类问题。
+        \item 特征 $\mathbf{x}\in\mathbb{R}^4$：本科层次、成绩、竞赛均分、论文均分。
+        \item 标签 $y\in\{0,1\}$：是否入营。
+        \item 做法：在样本 $\{(\mathbf{x}_i,y_i)\}$ 上拟合判别模型；由拟合结果导出四维权重 $\mathbf{w}$，再算综合分 $S$。
+    \end{itemize}
+    \vspace{0.25cm}
+    \centering
+    \footnotesize
+    数据流：\quad 四维特征 $\;\longrightarrow\;$ 标准化 $\;\longrightarrow\;$ 拟合二分类模型 $\;\longrightarrow\;$ \texttt{school\_bar.json}（\texttt{weights}、Bar、\texttt{acc} 等）
+\end{frame}
+
+\begin{frame}[fragile]{二分类：\texttt{train\_school.py}}
+    \begin{lstlisting}[language=Python, basicstyle=\ttfamily\scriptsize, caption={}]
+from pathlib import Path
+import json
+
+def load_jl(p):
+    return [json.loads(l) for l in open(p, encoding="utf-8") if l.strip()]
+
+def main():
+    r = Path("model/result")
+    cb = {x["id"]: x for x in load_jl(r / "compact.jsonl")}
+    vb = {x["id"]: x for x in load_jl(r / "vectors.jsonl")}
+    voc = json.loads((r / "vocab.json").read_text(encoding="utf-8"))
+    cv = json.loads((r / "comp_value.json").read_text(encoding="utf-8"))["values"]
+    pv = json.loads((r / "paper_value.json").read_text(encoding="utf-8"))["values"]
+    F = {i: row4(cb[i], vb[i], voc, cv, pv) for i in vb if i in cb}
+    out = []
+    for g in voc["school_dept_vocab"]:
+        X, y = [], []
+        for i in F:
+            adm = cb[i].get("入营情况") or {}
+            if g not in adm: continue
+            X.append(F[i]); y.append(1 if adm[g] else 0)
+        if not y: continue
+        w, bar = train_one(X, y)
+        out.append({"school_dept": g, "weights": w, "suggested_bar_score": bar})
+    (r / "school_bar.json").write_text(
+        json.dumps({"groups": out}, ensure_ascii=False, indent=2), encoding="utf-8")
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}{综合分与权重来源}
+    \begin{block}{综合分（与 \texttt{test.py} 一致）}
+        推理侧仍用与输入同顺序的四维：$f_1$ 层次、$f_2$ 成绩、$f_3$ 竞赛均分、$f_4$ 论文均分（与特征同源）。权重 $w_1,\ldots,w_4$（和为 1）：
+        \[
+            S = w_1 f_1 + w_2 f_2 + w_3 f_3 + w_4 f_4
+        \]
+        若 $S \ge$ \texttt{suggested\_bar\_score}，则判为「达到参考线」（$S$ 为线性可解释分数，与模型内部概率标度不必同一尺度）。
+    \end{block}
+    \begin{block}{权重从哪里来（与 \texttt{train\_school.py} 对齐）}
+        列标准化后逻辑斯蒂得到系数 $\beta_j$；第 $j$ 列标准差记 $\sigma_j$，取重要性正比于 $|\beta_j|/\sigma_j$，归一化后与该校各维特征--标签相关系数按固定比例混合，再归一化得到最终 $\mathbf{w}$；样本极少时辅以先验与留一评估等。
+    \end{block}
+\end{frame}
+
+\begin{frame}{产物展示：\texttt{school\_bar.json}}
+    \begin{block}{同一批数据、不同「学院」权重与 Bar}
+        \scriptsize
+        \begin{description}
+            \item[上海交通大学-计算机] 层次 9.3\%，成绩 73.0\%，竞赛 17.7\%，论文 0\% \quad Bar $\approx$ 75.58 \quad acc 0.5 \quad ($n{=}4$)
+            \item[南京大学-计算机科学与技术] 层次 50.3\%，成绩 22.9\%，竞赛 17.8\%，论文 9.0\% \quad Bar $\approx$ 55.72 \quad acc 0.5 \quad ($n{=}4$)
+            \item[清华大学-计算机系] 层次 0\%，成绩 24.8\%，竞赛 24.6\%，论文 50.6\% \quad Bar $\approx$ 29.43 \quad acc 0 \quad ($n{=}2$)
+            \item[北京大学-计算机科学与技术] 层次 32.4\%，成绩 0\%，竞赛 67.6\%，论文 0\% \quad Bar $\approx$ 47.51 \quad acc 0 \quad ($n{=}2$)
+        \end{description}
+    \end{block}
+    \begin{itemize}
+        \scriptsize
+        \item 仅能说明在当前稀疏样本下拟合出的相对侧重；不能外推为各校官方招生标准。
+        \item 输出：\texttt{school\_bar.json}（\texttt{weights}、\texttt{suggested\_bar\_score}、\texttt{acc}、\texttt{sample\_pos/neg}）。
+    \end{itemize}
+\end{frame}
+
+
+% --- 第四部分：推荐引擎与入营预测 ---
+\section{用户画像与推荐}
+
+\begin{frame}[fragile]{用户画像}
+    \small
+    \begin{itemize}\setlength{\itemsep}{0.2em}
+        \item 用户用自然语言描述自己在四个维度上的信息，参照上文的价值评估算出每一维度的分数。
+        \item 对每一个学院：用该学院四维权重与用户的四维特征做加权和得到 $S$。
+        \item 若 $S \ge$ 该校 \texttt{suggested\_bar\_score}，则标记为「预测过线」；同时可算 $S - \text{Bar}$ 作分差排序。
+    \end{itemize}
+    \vspace{0.25cm}
+    \centering\footnotesize 用户评分与院校门槛对比
+    \vspace{0.15cm}
+    \begin{lstlisting}[language=Python, basicstyle=\ttfamily\scriptsize, frame=single, backgroundcolor=\color{gray!5}]
+
+for g in school_groups:
+    w = g['weights']
+    # 结合院校权重计算用户在该校的竞争力
+    score = (w['院校层级'] * tier_f + w['成绩'] * rank_f +
+             w['竞赛'] * comp_f + w['论文'] * paper_f)
+    predict_admit = score >= g['suggested_bar_score']
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{输入示例：\texttt{sample.json}}
+    \lstinputlisting[
+        basicstyle=\ttfamily\scriptsize,
+        breaklines=true,
+        frame=single,
+        backgroundcolor=\color{gray!5},
+        columns=fullflexible
+    ]{sample.json}
+\end{frame}
+
+\begin{frame}[fragile,allowframebreaks]{推荐结果展示}
+    \small
+    命令：\texttt{python model/test.py --input-file sample.json}。
+    \vspace{0.2cm}
+    \lstinputlisting[
+        basicstyle=\ttfamily\tiny,
+        breaklines=true,
+        frame=single,
+        backgroundcolor=\color{gray!5},
+        columns=fullflexible,
+        firstline=1,
+        lastline=35
+    ]{1.txt}
+    \vspace{0.15cm}
+    \centering \footnotesize 字段含义：\texttt{total\_score} 即加权和 $S$，\texttt{suggested\_bar\_score} 为 Bar，\texttt{predict\_admit} 为 $S\!\ge\!$Bar；\texttt{bar\_gap} 可排序；不应理解为入营概率。
+\end{frame}
+
+% --- 第五部分：成果展示 ---
+\section{成果展示}
+
+\begin{frame}{竞赛、论文价值排行，节选）}
+    \begin{columns}
+        \begin{column}{0.48\textwidth}
+            \begin{block}{论文价值}
+                \scriptsize
+                \begin{itemize}
+                    \item NeurIPS / CVPR：100.0
+                    \item ccf-a在投 / SCI-EI：$\approx$ 99.15
+                    \item CCF-B / SCI二区 / AAAI：$\approx$ 94.04
+                    \item WWW：$\approx$ 12.77 \quad EI：0.0
+                \end{itemize}
+            \end{block}
+        \end{column}
+        \begin{column}{0.48\textwidth}
+            \begin{block}{竞赛价值}
+                \scriptsize
+                \begin{itemize}
+                    \item 果酱（稀有标签）：100.0
+                    \item 世界超算大赛：99.28
+                    \item XCPC / 天梯：$\approx$ 79.86
+                    \item 数模国赛 / 互联网+：$\approx$ 74--75
+                    \item 蓝桥杯 / 国奖 / CSP：$\approx$ 0--20（本批数据下）
+                \end{itemize}
+            \end{block}
+        \end{column}
+    \end{columns}
+    \vspace{0.2cm}
+    \centering
+    \footnotesize 
+\end{frame}
+
+\begin{frame}{院校偏好差异}
+    \begin{table}[]
+        \centering
+        \caption{四维权重（\%）与 Bar；蓝色为该列相对最大}
+        \tiny
+        \begin{tabular}{l|cccc|r}
+        \toprule
+        目标学校—院系 & 层次 & 成绩 & 竞赛 & 论文 & Bar \\ \midrule
+        上海交通大学-计算机 & 9.3 & \color{blue}{73.0} & 17.7 & 0.0 & 75.58 \\
+        北京大学-计算机科学与技术 & 32.4 & 0.0 & \color{blue}{67.6} & 0.0 & 47.51 \\
+        清华大学-计算机系 & 0.0 & 24.8 & 24.6 & \color{blue}{50.6} & 29.43 \\
+        南京大学-计算机科学与技术 & \color{blue}{50.3} & 22.9 & 17.8 & 9.0 & 55.72 \\
+        浙江大学-计算机科学与技术 & 6.2 & 25.9 & 25.5 & \color{blue}{42.4} & 58.36 \\
+        \bottomrule
+        \end{tabular}
+    \end{table}
+    \begin{itemize}
+        \scriptsize
+        \item 校名以 JSON 中 \texttt{school\_dept} 为准；北大「计算机」与「计算机科学与技术」为不同键。
+        \item 结论仅适用于本批数据，可信度极低。
+    \end{itemize}
+\end{frame}
+
+
+\end{document}

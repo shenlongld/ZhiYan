@@ -22,6 +22,7 @@ class TavilySearcher:
         max_results: int = 5,
         search_depth: str = "advanced",
         include_domains: List[str] | None = None,
+        timeout_sec: float = 30.0,
     ) -> Dict[str, Any]:
         """
         Tavily Python SDK 当前以同步调用为主，这里用 asyncio.to_thread 包装。
@@ -35,4 +36,12 @@ class TavilySearcher:
         }
         if include_domains:
             kwargs["include_domains"] = include_domains
-        return await asyncio.to_thread(self.client.search, **kwargs)
+        try:
+            return await asyncio.wait_for(
+                asyncio.to_thread(self.client.search, **kwargs),
+                timeout=timeout_sec,
+            )
+        except asyncio.TimeoutError as e:
+            raise TimeoutError(
+                f"Tavily search timeout after {timeout_sec}s, query={query}"
+            ) from e

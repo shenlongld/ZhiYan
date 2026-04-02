@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import axios from 'axios'
 
-const BASE_URL = 'http://localhost:8900/api/v1'
+const BASE_URL = '/api/v1'
 
 const apiClient = axios.create({
   baseURL: BASE_URL,

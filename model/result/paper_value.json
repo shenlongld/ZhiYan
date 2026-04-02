@@ -1,0 +1,423 @@
+{
+  "description": "同院校口径论文权重（向量化输入）",
+  "count": 40,
+  "values": {
+    "高瓴实习": 100.0,
+    "NeurIPS": 100.0,
+    "NeurIPS在投": 100.0,
+    "ccf-a在投": 99.1489,
+    "核心期刊或CCF会议": 99.1489,
+    "SCI/EI": 99.1489,
+    "CCF C": 94.0426,
+    "CCF B": 94.0426,
+    "SCI 二区": 94.0426,
+    "实审": 94.0426,
+    "AAAI": 94.0426,
+    "TIP": 94.0426,
+    "ei": 88.0851,
+    "sci": 88.0851,
+    "sci在投": 88.0851,
+    "C会": 88.0851,
+    "EI会议": 87.234,
+    "A会": 76.1702,
+    "b会": 70.2128,
+    "a会": 70.2128,
+    "ECCV": 70.2128,
+    "SCI一二三四区": 70.2128,
+    "EMNLP": 70.2128,
+    "ICML": 70.2128,
+    "CVPR": 70.2128,
+    "CCF-A/B/C": 70.2128,
+    "CCF-C oral": 67.234,
+    "SCI": 66.2411,
+    "ccf-a": 65.1064,
+    "一区CCF B": 65.1064,
+    "CCF C类": 65.1064,
+    "SCI检索": 65.1064,
+    "嵌入式、物联网相关": 64.2553,
+    "top2实验室": 64.2553,
+    "CCF-A": 53.1915,
+    "IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), CCF A类": 52.3404,
+    "CCF-C": 50.2128,
+    "TPAMI": 40.4255,
+    "WWW": 12.766,
+    "EI": 0.0
+  },
+  "school_distribution": [
+    {
+      "school": "厦门大学",
+      "total": 3,
+      "admit": 0,
+      "reject": 3,
+      "difficulty": 1.0
+    },
+    {
+      "school": "西湖大学",
+      "total": 2,
+      "admit": 0,
+      "reject": 2,
+      "difficulty": 1.0
+    },
+    {
+      "school": "长春工业大学",
+      "total": 1,
+      "admit": 0,
+      "reject": 1,
+      "difficulty": 1.0
+    },
+    {
+      "school": "中山大学",
+      "total": 1,
+      "admit": 0,
+      "reject": 1,
+      "difficulty": 1.0
+    },
+    {
+      "school": "如何看待中国海洋大学",
+      "total": 1,
+      "admit": 0,
+      "reject": 1,
+      "difficulty": 1.0
+    },
+    {
+      "school": "哈尔滨工业大学",
+      "total": 1,
+      "admit": 0,
+      "reject": 1,
+      "difficulty": 1.0
+    },
+    {
+      "school": "真的建议大学",
+      "total": 1,
+      "admit": 0,
+      "reject": 1,
+      "difficulty": 1.0
+    },
+    {
+      "school": "武汉大学",
+      "total": 3,
+      "admit": 1,
+      "reject": 2,
+      "difficulty": 0.666667
+    },
+    {
+      "school": "中国科学技术大学",
+      "total": 5,
+      "admit": 2,
+      "reject": 3,
+      "difficulty": 0.6
+    },
+    {
+      "school": "上海交通大学",
+      "total": 5,
+      "admit": 2,
+      "reject": 3,
+      "difficulty": 0.6
+    },
+    {
+      "school": "浙江大学",
+      "total": 7,
+      "admit": 3,
+      "reject": 4,
+      "difficulty": 0.571429
+    },
+    {
+      "school": "北京大学",
+      "total": 7,
+      "admit": 3,
+      "reject": 4,
+      "difficulty": 0.571429
+    },
+    {
+      "school": "东南大学",
+      "total": 4,
+      "admit": 2,
+      "reject": 2,
+      "difficulty": 0.5
+    },
+    {
+      "school": "南京大学",
+      "total": 5,
+      "admit": 3,
+      "reject": 2,
+      "difficulty": 0.4
+    },
+    {
+      "school": "复旦大学",
+      "total": 5,
+      "admit": 3,
+      "reject": 2,
+      "difficulty": 0.4
+    },
+    {
+      "school": "西安交通大学",
+      "total": 3,
+      "admit": 2,
+      "reject": 1,
+      "difficulty": 0.333333
+    },
+    {
+      "school": "清华大学",
+      "total": 5,
+      "admit": 4,
+      "reject": 1,
+      "difficulty": 0.2
+    },
+    {
+      "school": "北京航空航天大学",
+      "total": 2,
+      "admit": 2,
+      "reject": 0,
+      "difficulty": 0.0
+    },
+    {
+      "school": "中国人民大学",
+      "total": 1,
+      "admit": 1,
+      "reject": 0,
+      "difficulty": 0.0
+    }
+  ],
+  "metrics": {
+    "高瓴实习": {
+      "raw_score": 0.6,
+      "sample_size": 1,
+      "pos_count": 1,
+      "neg_count": 0
+    },
+    "NeurIPS": {
+      "raw_score": 0.6,
+      "sample_size": 1,
+      "pos_count": 1,
+      "neg_count": 0
+    },
+    "NeurIPS在投": {
+      "raw_score": 0.6,
+      "sample_size": 1,
+      "pos_count": 1,
+      "neg_count": 0
+    },
+    "ccf-a在投": {
+      "raw_score": 0.5714,
+      "sample_size": 1,
+      "pos_count": 1,
+      "neg_count": 0
+    },
+    "核心期刊或CCF会议": {
+      "raw_score": 0.5714,
+      "sample_size": 1,
+      "pos_count": 1,
+      "neg_count": 0
+    },
+    "SCI/EI": {
+      "raw_score": 0.5714,
+      "sample_size": 1,
+      "pos_count": 1,
+      "neg_count": 0
+    },
+    "CCF C": {
+      "raw_score": 0.4,
+      "sample_size": 1,
+      "pos_count": 1,
+      "neg_count": 0
+    },
+    "CCF B": {
+      "raw_score": 0.4,
+      "sample_size": 1,
+      "pos_count": 1,
+      "neg_count": 0
+    },
+    "SCI 二区": {
+      "raw_score": 0.4,
+      "sample_size": 1,
+      "pos_count": 1,
+      "neg_count": 0
+    },
+    "实审": {
+      "raw_score": 0.4,
+      "sample_size": 1,
+      "pos_count": 1,
+      "neg_count": 0
+    },
+    "AAAI": {
+      "raw_score": 0.4,
+      "sample_size": 1,
+      "pos_count": 1,
+      "neg_count": 0
+    },
+    "TIP": {
+      "raw_score": 0.4,
+      "sample_size": 1,
+      "pos_count": 1,
+      "neg_count": 0
+    },
+    "ei": {
+      "raw_score": 0.2,
+      "sample_size": 1,
+      "pos_count": 1,
+      "neg_count": 0
+    },
+    "sci": {
+      "raw_score": 0.2,
+      "sample_size": 1,
+      "pos_count": 1,
+      "neg_count": 0
+    },
+    "sci在投": {
+      "raw_score": 0.2,
+      "sample_size": 1,
+      "pos_count": 1,
+      "neg_count": 0
+    },
+    "C会": {
+      "raw_score": 0.2,
+      "sample_size": 1,
+      "pos_count": 1,
+      "neg_count": 0
+    },
+    "EI会议": {
+      "raw_score": 0.1714,
+      "sample_size": 2,
+      "pos_count": 1,
+      "neg_count": 1
+    },
+    "A会": {
+      "raw_score": -0.2,
+      "sample_size": 1,
+      "pos_count": 0,
+      "neg_count": 1
+    },
+    "b会": {
+      "raw_score": -0.4,
+      "sample_size": 1,
+      "pos_count": 0,
+      "neg_count": 1
+    },
+    "a会": {
+      "raw_score": -0.4,
+      "sample_size": 1,
+      "pos_count": 0,
+      "neg_count": 1
+    },
+    "ECCV": {
+      "raw_score": -0.4,
+      "sample_size": 1,
+      "pos_count": 0,
+      "neg_count": 1
+    },
+    "SCI一二三四区": {
+      "raw_score": -0.4,
+      "sample_size": 1,
+      "pos_count": 0,
+      "neg_count": 1
+    },
+    "EMNLP": {
+      "raw_score": -0.4,
+      "sample_size": 1,
+      "pos_count": 0,
+      "neg_count": 1
+    },
+    "ICML": {
+      "raw_score": -0.4,
+      "sample_size": 1,
+      "pos_count": 0,
+      "neg_count": 1
+    },
+    "CVPR": {
+      "raw_score": -0.4,
+      "sample_size": 1,
+      "pos_count": 0,
+      "neg_count": 1
+    },
+    "CCF-A/B/C": {
+      "raw_score": -0.4,
+      "sample_size": 1,
+      "pos_count": 0,
+      "neg_count": 1
+    },
+    "CCF-C oral": {
+      "raw_score": -0.5,
+      "sample_size": 1,
+      "pos_count": 0,
+      "neg_count": 1
+    },
+    "SCI": {
+      "raw_score": -0.5333,
+      "sample_size": 8,
+      "pos_count": 4,
+      "neg_count": 4
+    },
+    "ccf-a": {
+      "raw_score": -0.5714,
+      "sample_size": 1,
+      "pos_count": 0,
+      "neg_count": 1
+    },
+    "一区CCF B": {
+      "raw_score": -0.5714,
+      "sample_size": 1,
+      "pos_count": 0,
+      "neg_count": 1
+    },
+    "CCF C类": {
+      "raw_score": -0.5714,
+      "sample_size": 1,
+      "pos_count": 0,
+      "neg_count": 1
+    },
+    "SCI检索": {
+      "raw_score": -0.5714,
+      "sample_size": 1,
+      "pos_count": 0,
+      "neg_count": 1
+    },
+    "嵌入式、物联网相关": {
+      "raw_score": -0.6,
+      "sample_size": 1,
+      "pos_count": 0,
+      "neg_count": 1
+    },
+    "top2实验室": {
+      "raw_score": -0.6,
+      "sample_size": 1,
+      "pos_count": 0,
+      "neg_count": 1
+    },
+    "CCF-A": {
+      "raw_score": -0.9714,
+      "sample_size": 4,
+      "pos_count": 1,
+      "neg_count": 3
+    },
+    "IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), CCF A类": {
+      "raw_score": -1.0,
+      "sample_size": 1,
+      "pos_count": 0,
+      "neg_count": 1
+    },
+    "CCF-C": {
+      "raw_score": -1.0714,
+      "sample_size": 2,
+      "pos_count": 0,
+      "neg_count": 2
+    },
+    "TPAMI": {
+      "raw_score": -1.4,
+      "sample_size": 2,
+      "pos_count": 0,
+      "neg_count": 2
+    },
+    "WWW": {
+      "raw_score": -2.3286,
+      "sample_size": 10,
+      "pos_count": 4,
+      "neg_count": 6
+    },
+    "EI": {
+      "raw_score": -2.7571,
+      "sample_size": 15,
+      "pos_count": 7,
+      "neg_count": 8
+    }
+  }
+}

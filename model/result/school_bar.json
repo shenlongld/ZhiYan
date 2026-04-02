@@ -1,0 +1,608 @@
+{
+  "description": "按学校-院系：四维权重与入营 bar（与 test.py 接口一致）",
+  "feature_scale": "0-100",
+  "groups": [
+    {
+      "school_dept": "上海交通大学-计算机",
+      "suggested_bar_score": 75.5755,
+      "avg_bar_score": 75.5755,
+      "acc": 0.5,
+      "sample_pos": 1,
+      "sample_neg": 3,
+      "weights": {
+        "院校层级": 0.093009,
+        "成绩": 0.730121,
+        "竞赛": 0.17687,
+        "论文": 0.0
+      }
+    },
+    {
+      "school_dept": "南京大学-计算机科学与技术",
+      "suggested_bar_score": 55.7174,
+      "avg_bar_score": 56.4985,
+      "acc": 0.5,
+      "sample_pos": 2,
+      "sample_neg": 2,
+      "weights": {
+        "院校层级": 0.503378,
+        "成绩": 0.228539,
+        "竞赛": 0.178399,
+        "论文": 0.089684
+      }
+    },
+    {
+      "school_dept": "复旦大学-计算机",
+      "suggested_bar_score": 5.4857,
+      "avg_bar_score": 8.2285,
+      "acc": 0.25,
+      "sample_pos": 2,
+      "sample_neg": 1,
+      "weights": {
+        "院校层级": 0.176325,
+        "成绩": 0.0,
+        "竞赛": 0.432485,
+        "论文": 0.39119
+      }
+    },
+    {
+      "school_dept": "浙江大学-计算机科学与技术",
+      "suggested_bar_score": 58.3627,
+      "avg_bar_score": 58.3627,
+      "acc": 0.25,
+      "sample_pos": 1,
+      "sample_neg": 2,
+      "weights": {
+        "院校层级": 0.061727,
+        "成绩": 0.25895,
+        "竞赛": 0.255107,
+        "论文": 0.424217
+      }
+    },
+    {
+      "school_dept": "北京大学-计算机",
+      "suggested_bar_score": 15.013,
+      "avg_bar_score": 15.013,
+      "acc": 0.0,
+      "sample_pos": 1,
+      "sample_neg": 2,
+      "weights": {
+        "院校层级": 0.482562,
+        "成绩": 0.0,
+        "竞赛": 0.000318,
+        "论文": 0.51712
+      }
+    },
+    {
+      "school_dept": "中国科学技术大学-软件工程",
+      "suggested_bar_score": 51.6948,
+      "avg_bar_score": 51.6948,
+      "acc": 0.0,
+      "sample_pos": 0,
+      "sample_neg": 2,
+      "weights": {
+        "院校层级": 0.260857,
+        "成绩": 0.22632,
+        "竞赛": 0.252651,
+        "论文": 0.260172
+      }
+    },
+    {
+      "school_dept": "北京大学-计算机科学与技术",
+      "suggested_bar_score": 47.5069,
+      "avg_bar_score": 47.5069,
+      "acc": 0.0,
+      "sample_pos": 1,
+      "sample_neg": 1,
+      "weights": {
+        "院校层级": 0.324092,
+        "成绩": 0.0,
+        "竞赛": 0.675908,
+        "论文": 0.0
+      }
+    },
+    {
+      "school_dept": "北京航空航天大学-计算机",
+      "suggested_bar_score": 34.047,
+      "avg_bar_score": 34.047,
+      "acc": 0.0,
+      "sample_pos": 2,
+      "sample_neg": 0,
+      "weights": {
+        "院校层级": 0.261231,
+        "成绩": 0.22624,
+        "竞赛": 0.252581,
+        "论文": 0.259948
+      }
+    },
+    {
+      "school_dept": "复旦大学-计算机科学与技术",
+      "suggested_bar_score": 51.3774,
+      "avg_bar_score": 51.3774,
+      "acc": 0.0,
+      "sample_pos": 1,
+      "sample_neg": 1,
+      "weights": {
+        "院校层级": 0.41462,
+        "成绩": 0.0,
+        "竞赛": 0.320322,
+        "论文": 0.265058
+      }
+    },
+    {
+      "school_dept": "清华大学-计算机系",
+      "suggested_bar_score": 29.4328,
+      "avg_bar_score": 29.4328,
+      "acc": 0.0,
+      "sample_pos": 1,
+      "sample_neg": 1,
+      "weights": {
+        "院校层级": 0.0,
+        "成绩": 0.248391,
+        "竞赛": 0.245519,
+        "论文": 0.50609
+      }
+    },
+    {
+      "school_dept": "西安交通大学-计算机",
+      "suggested_bar_score": 25.5608,
+      "avg_bar_score": 25.5608,
+      "acc": 0.0,
+      "sample_pos": 1,
+      "sample_neg": 1,
+      "weights": {
+        "院校层级": 0.718897,
+        "成绩": 0.0,
+        "竞赛": 0.0,
+        "论文": 0.281103
+      }
+    },
+    {
+      "school_dept": "西湖大学-计算机",
+      "suggested_bar_score": 32.3671,
+      "avg_bar_score": 32.3671,
+      "acc": 0.0,
+      "sample_pos": 0,
+      "sample_neg": 2,
+      "weights": {
+        "院校层级": 0.261374,
+        "成绩": 0.226159,
+        "竞赛": 0.252783,
+        "论文": 0.259684
+      }
+    },
+    {
+      "school_dept": "上海交通大学-人工智能",
+      "suggested_bar_score": 84.9133,
+      "avg_bar_score": 84.9133,
+      "acc": 0.0,
+      "sample_pos": 1,
+      "sample_neg": 0,
+      "weights": {
+        "院校层级": 0.261225,
+        "成绩": 0.225942,
+        "竞赛": 0.253575,
+        "论文": 0.259259
+      }
+    },
+    {
+      "school_dept": "东南大学-数据科学与大数据技术",
+      "suggested_bar_score": 36.8839,
+      "avg_bar_score": 36.8839,
+      "acc": 0.0,
+      "sample_pos": 0,
+      "sample_neg": 1,
+      "weights": {
+        "院校层级": 0.261019,
+        "成绩": 0.226099,
+        "竞赛": 0.25332,
+        "论文": 0.259561
+      }
+    },
+    {
+      "school_dept": "东南大学-电子信息",
+      "suggested_bar_score": 20.5729,
+      "avg_bar_score": 20.5729,
+      "acc": 0.0,
+      "sample_pos": 1,
+      "sample_neg": 0,
+      "weights": {
+        "院校层级": 0.260626,
+        "成绩": 0.226123,
+        "竞赛": 0.253907,
+        "论文": 0.259344
+      }
+    },
+    {
+      "school_dept": "东南大学-计算机",
+      "suggested_bar_score": 24.6986,
+      "avg_bar_score": 24.6986,
+      "acc": 0.0,
+      "sample_pos": 1,
+      "sample_neg": 0,
+      "weights": {
+        "院校层级": 0.262088,
+        "成绩": 0.22606,
+        "竞赛": 0.252738,
+        "论文": 0.259115
+      }
+    },
+    {
+      "school_dept": "东南大学-计算机科学与技术",
+      "suggested_bar_score": 29.7592,
+      "avg_bar_score": 29.7592,
+      "acc": 0.0,
+      "sample_pos": 0,
+      "sample_neg": 1,
+      "weights": {
+        "院校层级": 0.261199,
+        "成绩": 0.226604,
+        "竞赛": 0.252881,
+        "论文": 0.259316
+      }
+    },
+    {
+      "school_dept": "中国人民大学-人工智能学院",
+      "suggested_bar_score": 11.5604,
+      "avg_bar_score": 11.5604,
+      "acc": 0.0,
+      "sample_pos": 1,
+      "sample_neg": 0,
+      "weights": {
+        "院校层级": 0.261582,
+        "成绩": 0.22597,
+        "竞赛": 0.253478,
+        "论文": 0.25897
+      }
+    },
+    {
+      "school_dept": "中国科学技术大学-未知院系",
+      "suggested_bar_score": 36.8012,
+      "avg_bar_score": 36.8012,
+      "acc": 0.0,
+      "sample_pos": 1,
+      "sample_neg": 0,
+      "weights": {
+        "院校层级": 0.261513,
+        "成绩": 0.226041,
+        "竞赛": 0.252912,
+        "论文": 0.259534
+      }
+    },
+    {
+      "school_dept": "中国科学技术大学-电子信息",
+      "suggested_bar_score": 53.9593,
+      "avg_bar_score": 53.9593,
+      "acc": 0.0,
+      "sample_pos": 0,
+      "sample_neg": 1,
+      "weights": {
+        "院校层级": 0.261305,
+        "成绩": 0.226256,
+        "竞赛": 0.252644,
+        "论文": 0.259794
+      }
+    },
+    {
+      "school_dept": "中国科学技术大学-计算机",
+      "suggested_bar_score": 27.5303,
+      "avg_bar_score": 27.5303,
+      "acc": 0.0,
+      "sample_pos": 1,
+      "sample_neg": 0,
+      "weights": {
+        "院校层级": 0.260868,
+        "成绩": 0.22597,
+        "竞赛": 0.253295,
+        "论文": 0.259867
+      }
+    },
+    {
+      "school_dept": "中山大学-未知院系",
+      "suggested_bar_score": 39.2343,
+      "avg_bar_score": 39.2343,
+      "acc": 0.0,
+      "sample_pos": 0,
+      "sample_neg": 1,
+      "weights": {
+        "院校层级": 0.261785,
+        "成绩": 0.225862,
+        "竞赛": 0.252649,
+        "论文": 0.259704
+      }
+    },
+    {
+      "school_dept": "北京大学-电子信息",
+      "suggested_bar_score": 46.5257,
+      "avg_bar_score": 46.5257,
+      "acc": 0.0,
+      "sample_pos": 1,
+      "sample_neg": 0,
+      "weights": {
+        "院校层级": 0.261121,
+        "成绩": 0.226365,
+        "竞赛": 0.252804,
+        "论文": 0.25971
+      }
+    },
+    {
+      "school_dept": "北京大学-软件工程",
+      "suggested_bar_score": 20.5806,
+      "avg_bar_score": 20.5806,
+      "acc": 0.0,
+      "sample_pos": 0,
+      "sample_neg": 1,
+      "weights": {
+        "院校层级": 0.261456,
+        "成绩": 0.225687,
+        "竞赛": 0.25362,
+        "论文": 0.259237
+      }
+    },
+    {
+      "school_dept": "南京大学-计算机",
+      "suggested_bar_score": 31.8925,
+      "avg_bar_score": 31.8925,
+      "acc": 0.0,
+      "sample_pos": 1,
+      "sample_neg": 0,
+      "weights": {
+        "院校层级": 0.260942,
+        "成绩": 0.226291,
+        "竞赛": 0.253338,
+        "论文": 0.259429
+      }
+    },
+    {
+      "school_dept": "厦门大学-未知院系",
+      "suggested_bar_score": 39.4786,
+      "avg_bar_score": 39.4786,
+      "acc": 0.0,
+      "sample_pos": 0,
+      "sample_neg": 1,
+      "weights": {
+        "院校层级": 0.261097,
+        "成绩": 0.226135,
+        "竞赛": 0.253462,
+        "论文": 0.259306
+      }
+    },
+    {
+      "school_dept": "厦门大学-计算机",
+      "suggested_bar_score": 24.6835,
+      "avg_bar_score": 24.6835,
+      "acc": 0.0,
+      "sample_pos": 0,
+      "sample_neg": 1,
+      "weights": {
+        "院校层级": 0.261928,
+        "成绩": 0.225922,
+        "竞赛": 0.253244,
+        "论文": 0.258906
+      }
+    },
+    {
+      "school_dept": "厦门大学-软件工程",
+      "suggested_bar_score": 34.3811,
+      "avg_bar_score": 34.3811,
+      "acc": 0.0,
+      "sample_pos": 0,
+      "sample_neg": 1,
+      "weights": {
+        "院校层级": 0.261645,
+        "成绩": 0.226037,
+        "竞赛": 0.252794,
+        "论文": 0.259524
+      }
+    },
+    {
+      "school_dept": "哈尔滨工业大学-自动化",
+      "suggested_bar_score": 45.4186,
+      "avg_bar_score": 45.4186,
+      "acc": 0.0,
+      "sample_pos": 0,
+      "sample_neg": 1,
+      "weights": {
+        "院校层级": 0.261251,
+        "成绩": 0.226205,
+        "竞赛": 0.253427,
+        "论文": 0.259117
+      }
+    },
+    {
+      "school_dept": "如何看待中国海洋大学-未知院系",
+      "suggested_bar_score": 47.7399,
+      "avg_bar_score": 47.7399,
+      "acc": 0.0,
+      "sample_pos": 0,
+      "sample_neg": 1,
+      "weights": {
+        "院校层级": 0.261452,
+        "成绩": 0.226189,
+        "竞赛": 0.252798,
+        "论文": 0.259561
+      }
+    },
+    {
+      "school_dept": "武汉大学-计算机",
+      "suggested_bar_score": 19.4129,
+      "avg_bar_score": 19.4129,
+      "acc": 0.0,
+      "sample_pos": 1,
+      "sample_neg": 0,
+      "weights": {
+        "院校层级": 0.26072,
+        "成绩": 0.226032,
+        "竞赛": 0.254014,
+        "论文": 0.259234
+      }
+    },
+    {
+      "school_dept": "武汉大学-计算机科学与技术",
+      "suggested_bar_score": 42.9433,
+      "avg_bar_score": 42.9433,
+      "acc": 0.0,
+      "sample_pos": 0,
+      "sample_neg": 1,
+      "weights": {
+        "院校层级": 0.261314,
+        "成绩": 0.22644,
+        "竞赛": 0.252799,
+        "论文": 0.259446
+      }
+    },
+    {
+      "school_dept": "武汉大学-软件工程",
+      "suggested_bar_score": 45.4514,
+      "avg_bar_score": 45.4514,
+      "acc": 0.0,
+      "sample_pos": 0,
+      "sample_neg": 1,
+      "weights": {
+        "院校层级": 0.261528,
+        "成绩": 0.225673,
+        "竞赛": 0.253452,
+        "论文": 0.259347
+      }
+    },
+    {
+      "school_dept": "浙江大学-网安",
+      "suggested_bar_score": 34.6505,
+      "avg_bar_score": 34.6505,
+      "acc": 0.0,
+      "sample_pos": 0,
+      "sample_neg": 1,
+      "weights": {
+        "院校层级": 0.261279,
+        "成绩": 0.225716,
+        "竞赛": 0.253629,
+        "论文": 0.259376
+      }
+    },
+    {
+      "school_dept": "浙江大学-计算机",
+      "suggested_bar_score": 60.7192,
+      "avg_bar_score": 60.7192,
+      "acc": 0.0,
+      "sample_pos": 1,
+      "sample_neg": 0,
+      "weights": {
+        "院校层级": 0.260929,
+        "成绩": 0.226026,
+        "竞赛": 0.253703,
+        "论文": 0.259342
+      }
+    },
+    {
+      "school_dept": "浙江大学-软件学院",
+      "suggested_bar_score": 24.6137,
+      "avg_bar_score": 24.6137,
+      "acc": 0.0,
+      "sample_pos": 1,
+      "sample_neg": 0,
+      "weights": {
+        "院校层级": 0.260489,
+        "成绩": 0.225995,
+        "竞赛": 0.253698,
+        "论文": 0.259817
+      }
+    },
+    {
+      "school_dept": "浙江大学-软件工程",
+      "suggested_bar_score": 48.1205,
+      "avg_bar_score": 48.1205,
+      "acc": 0.0,
+      "sample_pos": 0,
+      "sample_neg": 1,
+      "weights": {
+        "院校层级": 0.260699,
+        "成绩": 0.226188,
+        "竞赛": 0.25305,
+        "论文": 0.260064
+      }
+    },
+    {
+      "school_dept": "清华大学-计算机",
+      "suggested_bar_score": 19.4499,
+      "avg_bar_score": 19.4499,
+      "acc": 0.0,
+      "sample_pos": 1,
+      "sample_neg": 0,
+      "weights": {
+        "院校层级": 0.261773,
+        "成绩": 0.226117,
+        "竞赛": 0.253158,
+        "论文": 0.258952
+      }
+    },
+    {
+      "school_dept": "清华大学-计算机科学与技术",
+      "suggested_bar_score": 50.2851,
+      "avg_bar_score": 50.2851,
+      "acc": 0.0,
+      "sample_pos": 1,
+      "sample_neg": 0,
+      "weights": {
+        "院校层级": 0.261736,
+        "成绩": 0.225979,
+        "竞赛": 0.252451,
+        "论文": 0.259834
+      }
+    },
+    {
+      "school_dept": "清华大学-软件学院",
+      "suggested_bar_score": 45.483,
+      "avg_bar_score": 45.483,
+      "acc": 0.0,
+      "sample_pos": 1,
+      "sample_neg": 0,
+      "weights": {
+        "院校层级": 0.26121,
+        "成绩": 0.22598,
+        "竞赛": 0.253593,
+        "论文": 0.259217
+      }
+    },
+    {
+      "school_dept": "真的建议大学-未知院系",
+      "suggested_bar_score": 27.0031,
+      "avg_bar_score": 27.0031,
+      "acc": 0.0,
+      "sample_pos": 0,
+      "sample_neg": 1,
+      "weights": {
+        "院校层级": 0.260959,
+        "成绩": 0.226085,
+        "竞赛": 0.253888,
+        "论文": 0.259068
+      }
+    },
+    {
+      "school_dept": "西安交通大学-计算机类",
+      "suggested_bar_score": 35.0939,
+      "avg_bar_score": 35.0939,
+      "acc": 0.0,
+      "sample_pos": 1,
+      "sample_neg": 0,
+      "weights": {
+        "院校层级": 0.261099,
+        "成绩": 0.226097,
+        "竞赛": 0.253647,
+        "论文": 0.259157
+      }
+    },
+    {
+      "school_dept": "长春工业大学-电子信息",
+      "suggested_bar_score": 32.9983,
+      "avg_bar_score": 32.9983,
+      "acc": 0.0,
+      "sample_pos": 0,
+      "sample_neg": 1,
+      "weights": {
+        "院校层级": 0.260912,
+        "成绩": 0.226243,
+        "竞赛": 0.253303,
+        "论文": 0.259541
+      }
+    }
+  ]
+}

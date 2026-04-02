@@ -37,7 +37,7 @@ RAGFLOW_API_KEY=your_ragflow_api_key
 启动后端：
 
 ```bash
-uvicorn app.main:app --reload --port 8000
+uvicorn app.main:app --reload --port 8900
 ```
 
 ### 2. 配置前端
@@ -68,3 +68,31 @@ npm run dev
 - **前端**: Vue 3 + Vite + Element Plus + Pinia
 - **后端**: Python FastAPI + SQLAlchemy
 - **RAG引擎**: RAGFlow API
+
+## 保研入营Bar建模（简化深度学习）
+
+已在 `model/train_value.py` 和 `model/train_school.py` 提供可直接运行的建模脚本，基于
+`data/baoyan_experience_profiles_*.jsonl` 自动完成：
+
+- 高校入营 bar 建模（特征：院校层级、成绩、竞赛、论文）
+- 竞赛/论文含金量反推（使用“无明确成绩但已入营”样本）
+- 训练集/验证集划分
+
+运行方式：
+
+```bash
+mkdir -p model
+python3 model/vectorize.py --input data/baoyan_experience_profiles_20260329_134614.jsonl
+python3 model/train_value.py --input data/baoyan_experience_profiles_20260329_134614.jsonl
+python3 model/train_school.py --input data/baoyan_experience_profiles_20260329_134614.jsonl
+```
+
+默认输出文件：
+
+- `model/result/compact.jsonl`：训练压缩样本
+- `model/result/vocab.json`：词表
+- `model/result/vectors.jsonl`：向量化样本
+- `model/result/comp_value.json`：竞赛含金量
+- `model/result/paper_value.json`：论文级别含金量
+- `model/result/split.json`：训练/验证划分
+- `model/result/school_bar.json`：各高校建议 bar 与权重

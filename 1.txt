@@ -1,0 +1,351 @@
+{
+  "module_scores": {
+    "tier_text": "华五",
+    "院校层级分": 68.6317,
+    "rank_text": "12/200",
+    "成绩模块分": 94.5,
+    "竞赛模块分": 34.2926,
+    "论文模块分": 80.4255
+  },
+  "school_ranking": [
+    {
+      "school_dept": "上海交通大学-计算机",
+      "total_score": 81.4451,
+      "suggested_bar_score": 75.5755,
+      "predict_admit": true,
+      "bar_gap": 5.8696,
+    },
+    {
+      "school_dept": "北京大学-计算机",
+      "total_score": 74.7196,
+      "suggested_bar_score": 15.013,
+      "predict_admit": true,
+      "bar_gap": 59.7066,
+    },
+    {
+      "school_dept": "清华大学-计算机系",
+      "total_score": 72.595,
+      "suggested_bar_score": 29.4328,
+      "predict_admit": true,
+      "bar_gap": 43.1622,
+    },
+    {
+      "school_dept": "西安交通大学-计算机",
+      "total_score": 71.947,
+      "suggested_bar_score": 25.5608,
+      "predict_admit": true,
+      "bar_gap": 46.3862,
+    },
+    {
+      "school_dept": "浙江大学-计算机科学与技术",
+      "total_score": 71.5734,
+      "suggested_bar_score": 58.3627,
+      "predict_admit": true,
+      "bar_gap": 13.2107,
+    },
+    {
+      "school_dept": "南京大学-计算机科学与技术",
+      "total_score": 69.4753,
+      "suggested_bar_score": 55.7174,
+      "predict_admit": true,
+      "bar_gap": 13.7579,
+      "acc": 0.5
+    },
+    {
+      "school_dept": "中国科学技术大学-软件工程",
+      "total_score": 68.8788,
+      "suggested_bar_score": 51.6948,
+      "predict_admit": true,
+      "bar_gap": 17.184,
+      "acc": 0.0
+    },
+    {
+      "school_dept": "北京航空航天大学-计算机",
+      "total_score": 68.8765,
+      "suggested_bar_score": 34.047,
+      "predict_admit": true,
+      "bar_gap": 34.8295,
+      "acc": 0.0
+    },
+    {
+      "school_dept": "中国科学技术大学-电子信息",
+      "total_score": 68.8729,
+      "suggested_bar_score": 53.9593,
+      "predict_admit": true,
+      "bar_gap": 14.9136,
+      "acc": 0.0
+    },
+    {
+      "school_dept": "清华大学-计算机科学与技术",
+      "total_score": 68.8729,
+      "suggested_bar_score": 50.2851,
+      "predict_admit": true,
+      "bar_gap": 18.5878,
+      "acc": 0.0
+    },
+    {
+      "school_dept": "北京大学-电子信息",
+      "total_score": 68.8693,
+      "suggested_bar_score": 46.5257,
+      "predict_admit": true,
+      "bar_gap": 22.3436,
+      "acc": 0.0
+    },
+    {
+      "school_dept": "东南大学-计算机科学与技术",
+      "total_score": 68.8682,
+      "suggested_bar_score": 29.7592,
+      "predict_admit": true,
+      "bar_gap": 39.109,
+      "acc": 0.0
+    },
+    {
+      "school_dept": "武汉大学-计算机科学与技术",
+      "total_score": 68.8682,
+      "suggested_bar_score": 42.9433,
+      "predict_admit": true,
+      "bar_gap": 25.9249,
+      "acc": 0.0
+    },
+    {
+      "school_dept": "西湖大学-计算机",
+      "total_score": 68.8644,
+      "suggested_bar_score": 32.3671,
+      "predict_admit": true,
+      "bar_gap": 36.4973,
+      "acc": 0.0
+    },
+    {
+      "school_dept": "如何看待中国海洋大学-未知院系",
+      "total_score": 68.8632,
+      "suggested_bar_score": 47.7399,
+      "predict_admit": true,
+      "bar_gap": 21.1233,
+      "acc": 0.0
+    },
+    {
+      "school_dept": "中山大学-未知院系",
+      "total_score": 68.8615,
+      "suggested_bar_score": 39.2343,
+      "predict_admit": true,
+      "bar_gap": 29.6272,
+      "acc": 0.0
+    },
+    {
+      "school_dept": "浙江大学-软件工程",
+      "total_score": 68.8605,
+      "suggested_bar_score": 48.1205,
+      "predict_admit": true,
+      "bar_gap": 20.74,
+      "acc": 0.0
+    },
+    {
+      "school_dept": "厦门大学-软件工程",
+      "total_score": 68.8589,
+      "suggested_bar_score": 34.3811,
+      "predict_admit": true,
+      "bar_gap": 34.4778,
+      "acc": 0.0
+    },
+    {
+      "school_dept": "东南大学-计算机",
+      "total_score": 68.8567,
+      "suggested_bar_score": 24.6986,
+      "predict_admit": true,
+      "bar_gap": 44.1581,
+      "acc": 0.0
+    },
+    {
+      "school_dept": "中国科学技术大学-未知院系",
+      "total_score": 68.8551,
+      "suggested_bar_score": 36.8012,
+      "predict_admit": true,
+      "bar_gap": 32.0539,
+      "acc": 0.0
+    },
+    {
+      "school_dept": "长春工业大学-电子信息",
+      "total_score": 68.8469,
+      "suggested_bar_score": 32.9983,
+      "predict_admit": true,
+      "bar_gap": 35.8486,
+      "acc": 0.0
+    },
+    {
+      "school_dept": "南京大学-计算机",
+      "total_score": 68.8457,
+      "suggested_bar_score": 31.8925,
+      "predict_admit": true,
+      "bar_gap": 36.9532,
+      "acc": 0.0
+    },
+    {
+      "school_dept": "中国科学技术大学-计算机",
+      "total_score": 68.8441,
+      "suggested_bar_score": 27.5303,
+      "predict_admit": true,
+      "bar_gap": 41.3138,
+      "acc": 0.0
+    },
+    {
+      "school_dept": "东南大学-数据科学与大数据技术",
+      "total_score": 68.8429,
+      "suggested_bar_score": 36.8839,
+      "predict_admit": true,
+      "bar_gap": 31.959,
+      "acc": 0.0
+    },
+    {
+      "school_dept": "清华大学-计算机",
+      "total_score": 68.8418,
+      "suggested_bar_score": 19.4499,
+      "predict_admit": true,
+      "bar_gap": 49.3919,
+      "acc": 0.0
+    },
+    {
+      "school_dept": "哈尔滨工业大学-自动化",
+      "total_score": 68.8368,
+      "suggested_bar_score": 45.4186,
+      "predict_admit": true,
+      "bar_gap": 23.4182,
+      "acc": 0.0
+    },
+    {
+      "school_dept": "厦门大学-未知院系",
+      "total_score": 68.836,
+      "suggested_bar_score": 39.4786,
+      "predict_admit": true,
+      "bar_gap": 29.3574,
+      "acc": 0.0
+    },
+    {
+      "school_dept": "厦门大学-计算机",
+      "total_score": 68.8332,
+      "suggested_bar_score": 24.6835,
+      "predict_admit": true,
+      "bar_gap": 44.1497,
+      "acc": 0.0
+    },
+    {
+      "school_dept": "浙江大学-软件学院",
+      "total_score": 68.8302,
+      "suggested_bar_score": 24.6137,
+      "predict_admit": true,
+      "bar_gap": 44.2165,
+      "acc": 0.0
+    },
+    {
+      "school_dept": "中国人民大学-人工智能学院",
+      "total_score": 68.8272,
+      "suggested_bar_score": 11.5604,
+      "predict_admit": true,
+      "bar_gap": 57.2668,
+      "acc": 0.0
+    },
+    {
+      "school_dept": "西安交通大学-计算机类",
+      "total_score": 68.8269,
+      "suggested_bar_score": 35.0939,
+      "predict_admit": true,
+      "bar_gap": 33.733,
+      "acc": 0.0
+    },
+    {
+      "school_dept": "上海交通大学-人工智能",
+      "total_score": 68.8266,
+      "suggested_bar_score": 84.9133,
+      "predict_admit": false,
+      "bar_gap": -16.0867,
+      "acc": 0.0
+    },
+    {
+      "school_dept": "清华大学-软件学院",
+      "total_score": 68.8264,
+      "suggested_bar_score": 45.483,
+      "predict_admit": true,
+      "bar_gap": 23.3434,
+      "acc": 0.0
+    },
+    {
+      "school_dept": "浙江大学-计算机",
+      "total_score": 68.8253,
+      "suggested_bar_score": 60.7192,
+      "predict_admit": true,
+      "bar_gap": 8.1061,
+      "acc": 0.0
+    },
+    {
+      "school_dept": "武汉大学-软件工程",
+      "total_score": 68.8249,
+      "suggested_bar_score": 45.4514,
+      "predict_admit": true,
+      "bar_gap": 23.3735,
+      "acc": 0.0
+    },
+    {
+      "school_dept": "东南大学-电子信息",
+      "total_score": 68.8208,
+      "suggested_bar_score": 20.5729,
+      "predict_admit": true,
+      "bar_gap": 48.2479,
+      "acc": 0.0
+    },
+    {
+      "school_dept": "浙江大学-网安",
+      "total_score": 68.8202,
+      "suggested_bar_score": 34.6505,
+      "predict_admit": true,
+      "bar_gap": 34.1697,
+      "acc": 0.0
+    },
+    {
+      "school_dept": "北京大学-软件工程",
+      "total_score": 68.8181,
+      "suggested_bar_score": 20.5806,
+      "predict_admit": true,
+      "bar_gap": 48.2375,
+      "acc": 0.0
+    },
+    {
+      "school_dept": "真的建议大学-未知院系",
+      "total_score": 68.8172,
+      "suggested_bar_score": 27.0031,
+      "predict_admit": true,
+      "bar_gap": 41.8141,
+      "acc": 0.0
+    },
+    {
+      "school_dept": "武汉大学-计算机",
+      "total_score": 68.8135,
+      "suggested_bar_score": 19.4129,
+      "predict_admit": true,
+      "bar_gap": 49.4006,
+      "acc": 0.0
+    },
+    {
+      "school_dept": "复旦大学-计算机科学与技术",
+      "total_score": 60.7582,
+      "suggested_bar_score": 51.3774,
+      "predict_admit": true,
+      "bar_gap": 9.3808,
+      "acc": 0.0
+    },
+    {
+      "school_dept": "复旦大学-计算机",
+      "total_score": 58.3942,
+      "suggested_bar_score": 5.4857,
+      "predict_admit": true,
+      "bar_gap": 52.9085,
+      "acc": 0.25
+    },
+    {
+      "school_dept": "北京大学-计算机科学与技术",
+      "total_score": 45.4216,
+      "suggested_bar_score": 47.5069,
+      "predict_admit": false,
+      "bar_gap": -2.0853,
+      "acc": 0.0
+    }
+  ]
+}

@@ -1,0 +1,416 @@
+{
+  "description": "同院校口径竞赛权重（向量化输入）",
+  "count": 39,
+  "values": {
+    "果酱": 100.0,
+    "世界超算大赛": 99.2806,
+    "国一国二国三等": 94.964,
+    "省奖若干": 94.964,
+    "XCPC": 79.8561,
+    "天梯赛": 79.8561,
+    "数模国赛": 74.8201,
+    "大数竞赛": 74.8201,
+    "市调赛": 74.8201,
+    "互联网+": 74.1007,
+    "大英赛": 72.3022,
+    "网安相关的竞赛": 70.5036,
+    "ecfinal": 70.5036,
+    "区域赛": 70.5036,
+    "数模": 69.7842,
+    "机器人": 69.7842,
+    "程序设计水赛": 68.1055,
+    "软件杯": 68.1055,
+    "数竞": 68.1055,
+    "服务外包": 68.1055,
+    "数模数竞": 59.7122,
+    "CCPC": 59.7122,
+    "邀请赛": 59.7122,
+    "PAT": 59.7122,
+    "校奖": 59.7122,
+    "智能车": 59.7122,
+    "西门子杯": 59.7122,
+    "省奖": 59.7122,
+    "华为ICT大赛": 59.7122,
+    "数学建模": 57.1942,
+    "数学竞赛": 57.1942,
+    "ACM": 53.2374,
+    "美赛": 49.6403,
+    "ICPC": 45.3237,
+    "挑战杯": 45.3237,
+    "大创": 44.6043,
+    "国奖": 20.2638,
+    "CSP": 20.2638,
+    "蓝桥杯": 0.0
+  },
+  "school_distribution": [
+    {
+      "school": "厦门大学",
+      "total": 3,
+      "admit": 0,
+      "reject": 3,
+      "difficulty": 1.0
+    },
+    {
+      "school": "西湖大学",
+      "total": 2,
+      "admit": 0,
+      "reject": 2,
+      "difficulty": 1.0
+    },
+    {
+      "school": "长春工业大学",
+      "total": 1,
+      "admit": 0,
+      "reject": 1,
+      "difficulty": 1.0
+    },
+    {
+      "school": "中山大学",
+      "total": 1,
+      "admit": 0,
+      "reject": 1,
+      "difficulty": 1.0
+    },
+    {
+      "school": "如何看待中国海洋大学",
+      "total": 1,
+      "admit": 0,
+      "reject": 1,
+      "difficulty": 1.0
+    },
+    {
+      "school": "哈尔滨工业大学",
+      "total": 1,
+      "admit": 0,
+      "reject": 1,
+      "difficulty": 1.0
+    },
+    {
+      "school": "真的建议大学",
+      "total": 1,
+      "admit": 0,
+      "reject": 1,
+      "difficulty": 1.0
+    },
+    {
+      "school": "武汉大学",
+      "total": 3,
+      "admit": 1,
+      "reject": 2,
+      "difficulty": 0.666667
+    },
+    {
+      "school": "中国科学技术大学",
+      "total": 5,
+      "admit": 2,
+      "reject": 3,
+      "difficulty": 0.6
+    },
+    {
+      "school": "上海交通大学",
+      "total": 5,
+      "admit": 2,
+      "reject": 3,
+      "difficulty": 0.6
+    },
+    {
+      "school": "浙江大学",
+      "total": 7,
+      "admit": 3,
+      "reject": 4,
+      "difficulty": 0.571429
+    },
+    {
+      "school": "北京大学",
+      "total": 7,
+      "admit": 3,
+      "reject": 4,
+      "difficulty": 0.571429
+    },
+    {
+      "school": "东南大学",
+      "total": 4,
+      "admit": 2,
+      "reject": 2,
+      "difficulty": 0.5
+    },
+    {
+      "school": "南京大学",
+      "total": 5,
+      "admit": 3,
+      "reject": 2,
+      "difficulty": 0.4
+    },
+    {
+      "school": "复旦大学",
+      "total": 5,
+      "admit": 3,
+      "reject": 2,
+      "difficulty": 0.4
+    },
+    {
+      "school": "西安交通大学",
+      "total": 3,
+      "admit": 2,
+      "reject": 1,
+      "difficulty": 0.333333
+    },
+    {
+      "school": "清华大学",
+      "total": 5,
+      "admit": 4,
+      "reject": 1,
+      "difficulty": 0.2
+    },
+    {
+      "school": "北京航空航天大学",
+      "total": 2,
+      "admit": 2,
+      "reject": 0,
+      "difficulty": 0.0
+    },
+    {
+      "school": "中国人民大学",
+      "total": 1,
+      "admit": 1,
+      "reject": 0,
+      "difficulty": 0.0
+    }
+  ],
+  "metrics": {
+    "果酱": {
+      "raw_score": 0.6,
+      "sample_size": 1,
+      "pos_count": 1,
+      "neg_count": 0
+    },
+    "世界超算大赛": {
+      "raw_score": 0.5714,
+      "sample_size": 1,
+      "pos_count": 1,
+      "neg_count": 0
+    },
+    "国一国二国三等": {
+      "raw_score": 0.4,
+      "sample_size": 1,
+      "pos_count": 1,
+      "neg_count": 0
+    },
+    "省奖若干": {
+      "raw_score": 0.4,
+      "sample_size": 1,
+      "pos_count": 1,
+      "neg_count": 0
+    },
+    "XCPC": {
+      "raw_score": -0.2,
+      "sample_size": 1,
+      "pos_count": 0,
+      "neg_count": 1
+    },
+    "天梯赛": {
+      "raw_score": -0.2,
+      "sample_size": 1,
+      "pos_count": 0,
+      "neg_count": 1
+    },
+    "数模国赛": {
+      "raw_score": -0.4,
+      "sample_size": 1,
+      "pos_count": 0,
+      "neg_count": 1
+    },
+    "大数竞赛": {
+      "raw_score": -0.4,
+      "sample_size": 1,
+      "pos_count": 0,
+      "neg_count": 1
+    },
+    "市调赛": {
+      "raw_score": -0.4,
+      "sample_size": 1,
+      "pos_count": 0,
+      "neg_count": 1
+    },
+    "互联网+": {
+      "raw_score": -0.4286,
+      "sample_size": 2,
+      "pos_count": 1,
+      "neg_count": 1
+    },
+    "大英赛": {
+      "raw_score": -0.5,
+      "sample_size": 1,
+      "pos_count": 0,
+      "neg_count": 1
+    },
+    "网安相关的竞赛": {
+      "raw_score": -0.5714,
+      "sample_size": 1,
+      "pos_count": 0,
+      "neg_count": 1
+    },
+    "ecfinal": {
+      "raw_score": -0.5714,
+      "sample_size": 1,
+      "pos_count": 0,
+      "neg_count": 1
+    },
+    "区域赛": {
+      "raw_score": -0.5714,
+      "sample_size": 1,
+      "pos_count": 0,
+      "neg_count": 1
+    },
+    "数模": {
+      "raw_score": -0.6,
+      "sample_size": 1,
+      "pos_count": 0,
+      "neg_count": 1
+    },
+    "机器人": {
+      "raw_score": -0.6,
+      "sample_size": 1,
+      "pos_count": 0,
+      "neg_count": 1
+    },
+    "程序设计水赛": {
+      "raw_score": -0.6667,
+      "sample_size": 1,
+      "pos_count": 0,
+      "neg_count": 1
+    },
+    "软件杯": {
+      "raw_score": -0.6667,
+      "sample_size": 1,
+      "pos_count": 0,
+      "neg_count": 1
+    },
+    "数竞": {
+      "raw_score": -0.6667,
+      "sample_size": 1,
+      "pos_count": 0,
+      "neg_count": 1
+    },
+    "服务外包": {
+      "raw_score": -0.6667,
+      "sample_size": 1,
+      "pos_count": 0,
+      "neg_count": 1
+    },
+    "数模数竞": {
+      "raw_score": -1.0,
+      "sample_size": 1,
+      "pos_count": 0,
+      "neg_count": 1
+    },
+    "CCPC": {
+      "raw_score": -1.0,
+      "sample_size": 1,
+      "pos_count": 0,
+      "neg_count": 1
+    },
+    "邀请赛": {
+      "raw_score": -1.0,
+      "sample_size": 1,
+      "pos_count": 0,
+      "neg_count": 1
+    },
+    "PAT": {
+      "raw_score": -1.0,
+      "sample_size": 1,
+      "pos_count": 0,
+      "neg_count": 1
+    },
+    "校奖": {
+      "raw_score": -1.0,
+      "sample_size": 1,
+      "pos_count": 0,
+      "neg_count": 1
+    },
+    "智能车": {
+      "raw_score": -1.0,
+      "sample_size": 1,
+      "pos_count": 0,
+      "neg_count": 1
+    },
+    "西门子杯": {
+      "raw_score": -1.0,
+      "sample_size": 1,
+      "pos_count": 0,
+      "neg_count": 1
+    },
+    "省奖": {
+      "raw_score": -1.0,
+      "sample_size": 1,
+      "pos_count": 0,
+      "neg_count": 1
+    },
+    "华为ICT大赛": {
+      "raw_score": -1.0,
+      "sample_size": 1,
+      "pos_count": 0,
+      "neg_count": 1
+    },
+    "数学建模": {
+      "raw_score": -1.1,
+      "sample_size": 2,
+      "pos_count": 0,
+      "neg_count": 2
+    },
+    "数学竞赛": {
+      "raw_score": -1.1,
+      "sample_size": 2,
+      "pos_count": 0,
+      "neg_count": 2
+    },
+    "ACM": {
+      "raw_score": -1.2571,
+      "sample_size": 11,
+      "pos_count": 6,
+      "neg_count": 5
+    },
+    "美赛": {
+      "raw_score": -1.4,
+      "sample_size": 5,
+      "pos_count": 1,
+      "neg_count": 4
+    },
+    "ICPC": {
+      "raw_score": -1.5714,
+      "sample_size": 2,
+      "pos_count": 0,
+      "neg_count": 2
+    },
+    "挑战杯": {
+      "raw_score": -1.5714,
+      "sample_size": 2,
+      "pos_count": 0,
+      "neg_count": 2
+    },
+    "大创": {
+      "raw_score": -1.6,
+      "sample_size": 4,
+      "pos_count": 1,
+      "neg_count": 3
+    },
+    "国奖": {
+      "raw_score": -2.5667,
+      "sample_size": 5,
+      "pos_count": 1,
+      "neg_count": 4
+    },
+    "CSP": {
+      "raw_score": -2.5667,
+      "sample_size": 10,
+      "pos_count": 3,
+      "neg_count": 7
+    },
+    "蓝桥杯": {
+      "raw_score": -3.3714,
+      "sample_size": 8,
+      "pos_count": 1,
+      "neg_count": 7
+    }
+  }
+}
